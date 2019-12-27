@@ -50,6 +50,8 @@ jobs:
     - name: Install EB CLI
       run: |
         pip install awsebcli --upgrade --user
+        LOCAL_PATH=~/.local/bin
+        export PATH=LOCAL_PATH:$PATH
 
     - name: Check eb cli
       run: |
