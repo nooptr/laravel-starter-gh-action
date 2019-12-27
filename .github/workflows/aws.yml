@@ -63,4 +63,4 @@ jobs:
         # Build a docker container and
         # push it to ECR so that it can
         # be deployed to ECS.
-        ~/.local/bin/eb --version
+        ~/.local/bin/eb list
