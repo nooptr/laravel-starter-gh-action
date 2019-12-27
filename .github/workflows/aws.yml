@@ -47,11 +47,13 @@ jobs:
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: us-east-2
 
-    - name: Build, tag, and push image to Amazon ECR
+    - name: Install EB CLI
+      run: |
+        pip install awsebcli --upgrade --user
+
+    - name: Check eb cli
       run: |
         # Build a docker container and
         # push it to ECR so that it can
         # be deployed to ECS.
-        ls /usr/bin
-        ls /bin
-        eb --help
+        eb --version
