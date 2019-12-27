@@ -29,7 +29,7 @@ on:
     branches:
       - master
 
-name: Deploy to Amazon ECS
+name: Test eb CLI
 
 jobs:
   deploy:
@@ -50,8 +50,12 @@ jobs:
     - name: Install EB CLI
       run: |
         pip install awsebcli --upgrade --user
+
+    - name: Add Path
+      run: |
+        ls ~/
         LOCAL_PATH=~/.local/bin
-        export PATH=LOCAL_PATH:$PATH
+        export PATH=LOCAL_PATH:$PATH        
 
     - name: Check eb cli
       run: |
