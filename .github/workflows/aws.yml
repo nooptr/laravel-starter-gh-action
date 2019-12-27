@@ -53,9 +53,9 @@ jobs:
 
     - name: Add Path
       run: |
-        ls ~/
+        ls -la ~/
         LOCAL_PATH=~/.local/bin
-        export PATH=LOCAL_PATH:$PATH        
+        export PATH=LOCAL_PATH:$PATH
 
     - name: Check eb cli
       run: |
