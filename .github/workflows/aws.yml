@@ -53,7 +53,7 @@ jobs:
 
     - name: Add path eb
       run: |
-        ls -la ~/.local
+        ls -la ~/.local/bin
         echo 'export LOCAL_PATH=~/.local/bin' >> ~/.profile
         echo 'export PATH=LOCAL_PATH:$PATH' >> ~/.profile
         source ~/.profile
@@ -63,4 +63,4 @@ jobs:
         # Build a docker container and
         # push it to ECR so that it can
         # be deployed to ECS.
-        eb --version
+        ~/.local/bin/eb --version
