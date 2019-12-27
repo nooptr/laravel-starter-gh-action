@@ -51,11 +51,12 @@ jobs:
       run: |
         pip install awsebcli --upgrade --user
 
-    - name: Add Path
+    - name: Add path eb
       run: |
-        ls -la ~/
-        LOCAL_PATH=~/.local/bin
-        export PATH=LOCAL_PATH:$PATH
+        ls -la ~/.local
+        echo 'export LOCAL_PATH=~/.local/bin' >> ~/.profile
+        echo 'export PATH=LOCAL_PATH:$PATH' >> ~/.profile
+        source ~/.profile
 
     - name: Check eb cli
       run: |
